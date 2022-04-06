@@ -15,6 +15,8 @@ class Window(QMainWindow):
     super().__init__()
     self.setWindowTitle("Germany")
     self.layout = QVBoxLayout()
+    self.layout.setSpacing(0)
+    self.layout.setContentsMargins(0,0,0,0)
     self.layout.addWidget(Color('black'))
     self.layout.addWidget(Color('red'))
     self.layout.addWidget(Color('yellow'))
