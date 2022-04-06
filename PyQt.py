@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Apr  6 17:03:00 2022
-
-@author: comem
-"""
-
 import sys 
 from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QGridLayout
 from PyQt5.QtGui import QColor, QPalette
@@ -23,22 +16,20 @@ class Window(QMainWindow):
         super().__init__()
         self.setWindowTitle("Grid Layouts")
         self.layout = QGridLayout()
-        self.layout.addWidget(Color('black'),0,0)
-        self.layout.addWidget(Color('white'),0,1)
-        self.layout.addWidget(Color('black'),0,2)
-        self.layout.addWidget(Color('white'),0,3)
-        self.layout.addWidget(Color('white'),1,0)
-        self.layout.addWidget(Color('black'),1,1)
-        self.layout.addWidget(Color('white'),1,2)
-        self.layout.addWidget(Color('black'),1,3)
-        self.layout.addWidget(Color('black'),2,0)
-        self.layout.addWidget(Color('white'),2,1)
-        self.layout.addWidget(Color('black'),2,2)
-        self.layout.addWidget(Color('white'),2,3)
-        self.layout.addWidget(Color('white'),3,0)
-        self.layout.addWidget(Color('black'),3,1)
-        self.layout.addWidget(Color('white'),3,2)
-        self.layout.addWidget(Color('black'),3,3)
+        for i in range(4):
+            if i%2 ==0:
+                for k in range(4):
+                    if k%2 == 0:
+                         self.layout.addWidget(Color('black'),i,k)
+                    else:
+                        self.layout.addWidget(Color('white'),i,k)
+            else:
+                for k in range(4):
+                    if k%2 == 0:
+                         self.layout.addWidget(Color('white'),i,k)
+                    else:
+                        self.layout.addWidget(Color('black'),i,k)
+                    
         self.widget = QWidget()
         self.widget.setLayout(self.layout)
         self.setCentralWidget(self.widget)
