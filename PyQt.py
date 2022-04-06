@@ -1,5 +1,5 @@
 import sys 
-from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QGridLayout
+from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QGridLayout 
 from PyQt5.QtGui import QColor, QPalette
 from PyQt5.QtCore import QCoreApplication
 
@@ -16,6 +16,8 @@ class Window(QMainWindow):
         super().__init__()
         self.setWindowTitle("Grid Layouts")
         self.layout = QGridLayout()
+        self.layout.setSpacing(0)
+        self.layout.setContentsMargins(0,0,0,0)
         for i in range(4):
             if i%2 ==0:
                 for k in range(4):
