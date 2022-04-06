@@ -15,6 +15,8 @@ class Window(QMainWindow):
     super().__init__()
     self.setWindowTitle("France")
     self.layout = QHBoxLayout()
+    self.layout.setSpacing(0)
+    self.layout.setContentsMargins(0,0,0,0)
     self.layout.addWidget(Color('blue'))
     self.layout.addWidget(Color('white'))
     self.layout.addWidget(Color('red'))
